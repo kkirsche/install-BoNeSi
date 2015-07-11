@@ -29,20 +29,11 @@ case ${osinfo} in
   Kali)
     apt-get update
     echo '[*] Installing Kali Dependencies'
-    apt-get install -y libpcap-dev libnet-dev autoconf
-    cd /tmp
-    wget http://ftp.gnu.org/gnu/automake/automake-1.10.2.tar.gz
-    tar -xf automake-1.10.2.tar.gz
-    rm automake-1.10.2.tar.gz
-    cd ./automake-1.10.2/
-    ./configure
-    make
-    make install
-    cd ..
-    rm -rf ./automake-1.10.2/
+    apt-get install -y libpcap-dev libnet-dev autoconf gcc make automake
     echo '[*] Installing BoNeSi'
     git clone https://github.com/Markus-Go/bonesi.git /opt/BoNeSi
     cd /opt/BoNeSi
+    autoreconf
     ./configure
     make
     make install
