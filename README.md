@@ -12,3 +12,10 @@ It then cleans up that directory leaving only:
 * `/opt/BoNeSi/50k-bots`
 * `/opt/BoNeSi/browserlist.txt`
 * `/opt/BoNeSi/urllist.txt`
+
+To use:
+```shell
+wget https://raw.githubusercontent.com/kkirsche/install-BoNeSi/master/install.sh
+chmod -x ./install.sh
+sh ./install.sh
+```
