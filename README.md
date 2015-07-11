@@ -4,6 +4,7 @@ For Installing the BoNeSI DDoS Botnet Simulator on Kali 1.1.0a
 Installs:
 * libpcap-dev
 * libnet-dev
+* autoconf
 * automake-1.10.2
 * Installs https://github.com/Markus-Go/bonesi.git to `/opt/BoNeSi`
 
