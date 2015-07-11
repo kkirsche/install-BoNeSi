@@ -29,7 +29,7 @@ case ${osinfo} in
   Kali)
     apt-get update
     echo '[*] Installing Kali Dependencies'
-    apt-get install -y libpcap-dev libnet-dev
+    apt-get install -y libpcap-dev libnet-dev autoconf
     cd /tmp
     wget http://ftp.gnu.org/gnu/automake/automake-1.10.2.tar.gz
     tar -xf automake-1.10.2.tar.gz
