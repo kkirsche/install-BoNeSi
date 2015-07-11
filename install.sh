@@ -46,7 +46,7 @@ case ${osinfo} in
     ./configure
     make
     make install
-    rm -rf !(50k-bots|browserlist.txt|urllist.txt)
+    rm -rf !\(50k-bots|browserlist.txt|urllist.txt\)
     cd
   ;;
   # Notify Manual Installation Requirement And Exit
