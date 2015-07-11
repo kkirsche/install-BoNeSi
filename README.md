@@ -19,4 +19,5 @@ To use:
 wget https://raw.githubusercontent.com/kkirsche/install-BoNeSi/master/install.sh
 chmod -x ./install.sh
 sh ./install.sh
+rm ./install.sh
 ```
