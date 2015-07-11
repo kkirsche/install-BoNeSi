@@ -5,7 +5,9 @@ Installs:
 * libpcap-dev
 * libnet-dev
 * autoconf
-* automake-1.10.2
+* automake
+* gcc
+* make
 * Installs https://github.com/Markus-Go/bonesi.git to `/opt/BoNeSi`
 
 It then cleans up that directory leaving only:
