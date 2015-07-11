@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script is a huge rip off of EyeWitness
+# Thanks! https://github.com/ChrisTruncer/EyeWitness
 # Global Variables
 userid=`id -u`
 osinfo=`cat /etc/issue|cut -d" " -f1|head -n1`
