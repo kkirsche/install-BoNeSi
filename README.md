@@ -18,7 +18,7 @@ It then cleans up that directory leaving only:
 
 To use:
 ```shell
-wget https://raw.githubusercontent.com/kkirsche/install-BoNeSi/master/install.sh
+curl -O https://raw.githubusercontent.com/kkirsche/install-BoNeSi/master/install.sh
 chmod -x ./install.sh
 sh ./install.sh
 rm ./install.sh
