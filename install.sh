@@ -5,6 +5,7 @@
 # Global Variables
 userid=`id -u`
 osinfo=`cat /etc/issue|cut -d" " -f1|head -n1`
+eplpkg='http://linux.mirrors.es.net/fedora-epel/6/i386/epel-release-6-8.noarch.rpm'
 
 # Clear Terminal (For Prettyness)
 clear
@@ -44,7 +45,7 @@ case ${osinfo} in
   # CentOS 6.5 Dependency Installation
   CentOS)
     echo '[*] Installing CentOS Dependencies'
-    yum install -y libpcap-dev libnet-dev autoconf gcc make automake git
+    yum install -y libpcap-devel libnet-devel autoconf gcc make automake git
     echo
     echo '[*] Installing BoNeSi'
     git clone https://github.com/Markus-Go/bonesi.git /opt/BoNeSi
@@ -57,8 +58,16 @@ case ${osinfo} in
     cd
   ;;
   \\S)
+    echo '[Warning]: EyeWitness on CentOS Requires EPEL Repository!'
+    read -p '[?] Install and Enable EPEL Repository? (y/n): ' epel
+    if [ "${epel}" == 'y' ]; then
+      rpm -ivh ${eplpkg}
+    else
+      echo '[!] User Aborted EyeWitness Installation.'
+      exit 1
+    fi
     echo '[*] Installing CentOS Dependencies'
-    yum install -y libpcap-dev libnet-dev autoconf gcc make automake git
+    yum install -y libpcap-devel libnet-devel autoconf gcc make automake git
     echo
     echo '[*] Installing BoNeSi'
     git clone https://github.com/Markus-Go/bonesi.git /opt/BoNeSi
