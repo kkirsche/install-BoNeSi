@@ -44,6 +44,14 @@ case ${osinfo} in
   ;;
   # CentOS 6.5 Dependency Installation
   CentOS)
+    # echo '[Warning]: BoNeSi on CentOS Requires EPEL Repository!'
+    # read -p '[?] Install and Enable EPEL Repository? (y/n): ' epel
+    # if [ "${epel}" == 'y' ]; then
+      # rpm -ivh ${eplpkg}
+    # else
+      # echo '[!] User Aborted EyeWitness Installation.'
+      # exit 1
+    # fi
     echo '[*] Installing CentOS Dependencies'
     yum install -y libpcap-devel libnet-devel autoconf gcc make automake git
     echo
@@ -54,9 +62,18 @@ case ${osinfo} in
     ./configure
     make
     make install
-    rm -rf !\(50k-bots|browserlist.txt|urllist.txt\)
+    mv /opt/BoNeSi/50k-bots /tmp/50k-bots
+    mv /opt/BoNeSi/browserlist.txt /tmp/browserlist.txt
+    mv /opt/BoNeSi/urllist.txt /tmp/urllist.txt
+    rm -rf /opt/BoNeSi
+    mkdir /opt/BoNeSi
+    mv /tmp/50k-bots /opt/BoNeSi/50k-bots
+    mv /tmp/browserlist.txt /opt/BoNeSi/browserlist.txt
+    mv /tmp/urllist.txt /opt/BoNeSi/urllist.txt
     cd
   ;;
+  ;;
+  # CentOS 7
   \\S)
     # echo '[Warning]: BoNeSi on CentOS Requires EPEL Repository!'
     # read -p '[?] Install and Enable EPEL Repository? (y/n): ' epel
@@ -76,7 +93,14 @@ case ${osinfo} in
     ./configure
     make
     make install
-    rm -rf !\(50k-bots|browserlist.txt|urllist.txt\)
+    mv /opt/BoNeSi/50k-bots /tmp/50k-bots
+    mv /opt/BoNeSi/browserlist.txt /tmp/browserlist.txt
+    mv /opt/BoNeSi/urllist.txt /tmp/urllist.txt
+    rm -rf /opt/BoNeSi
+    mkdir /opt/BoNeSi
+    mv /tmp/50k-bots /opt/BoNeSi/50k-bots
+    mv /tmp/browserlist.txt /opt/BoNeSi/browserlist.txt
+    mv /tmp/urllist.txt /opt/BoNeSi/urllist.txt
     cd
   ;;
   # Notify Manual Installation Requirement And Exit
