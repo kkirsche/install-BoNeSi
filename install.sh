@@ -90,14 +90,6 @@ case ${osinfo} in
   ;;
   # CentOS 7
   \\S)
-    # echo '[Warning]: BoNeSi on CentOS Requires EPEL Repository!'
-    # read -p '[?] Install and Enable EPEL Repository? (y/n): ' epel
-    # if [ "${epel}" == 'y' ]; then
-      # rpm -ivh ${eplpkg}
-    # else
-      # echo '[!] User Aborted EyeWitness Installation.'
-      # exit 1
-    # fi
     echo '[*] Installing CentOS Dependencies'
     yum install -y libpcap-devel libnet-devel autoconf gcc make automake git
     echo
