@@ -41,8 +41,22 @@ case ${osinfo} in
     rm -rf !\(50k-bots|browserlist.txt|urllist.txt\)
     cd
   ;;
-  # CentOS 6.5+ Dependency Installation
+  # CentOS 6.5 Dependency Installation
   CentOS)
+    echo '[*] Installing CentOS Dependencies'
+    yum install -y libpcap-dev libnet-dev autoconf gcc make automake
+    echo
+    echo '[*] Installing BoNeSi'
+    git clone https://github.com/Markus-Go/bonesi.git /opt/BoNeSi
+    cd /opt/BoNeSi
+    autoreconf
+    ./configure
+    make
+    make install
+    rm -rf !\(50k-bots|browserlist.txt|urllist.txt\)
+    cd
+  ;;
+  \\S)
     echo '[*] Installing CentOS Dependencies'
     yum install -y libpcap-dev libnet-dev autoconf gcc make automake
     echo
