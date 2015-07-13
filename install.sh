@@ -88,7 +88,6 @@ case ${osinfo} in
     mv /tmp/urllist.txt /opt/BoNeSi/urllist.txt
     cd
   ;;
-  ;;
   # CentOS 7
   \\S)
     # echo '[Warning]: BoNeSi on CentOS Requires EPEL Repository!'
