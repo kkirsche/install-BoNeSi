@@ -29,7 +29,7 @@ case ${osinfo} in
   Kali)
     apt-get update
     echo '[*] Installing Kali Dependencies'
-    apt-get install -y libpcap-dev libnet-dev autoconf gcc make automake
+    apt-get install -y libpcap-dev libnet-dev autoconf gcc make automake git
     echo
     echo '[*] Installing BoNeSi'
     git clone https://github.com/Markus-Go/bonesi.git /opt/BoNeSi
@@ -44,7 +44,7 @@ case ${osinfo} in
   # CentOS 6.5 Dependency Installation
   CentOS)
     echo '[*] Installing CentOS Dependencies'
-    yum install -y libpcap-dev libnet-dev autoconf gcc make automake
+    yum install -y libpcap-dev libnet-dev autoconf gcc make automake git
     echo
     echo '[*] Installing BoNeSi'
     git clone https://github.com/Markus-Go/bonesi.git /opt/BoNeSi
@@ -58,7 +58,7 @@ case ${osinfo} in
   ;;
   \\S)
     echo '[*] Installing CentOS Dependencies'
-    yum install -y libpcap-dev libnet-dev autoconf gcc make automake
+    yum install -y libpcap-dev libnet-dev autoconf gcc make automake git
     echo
     echo '[*] Installing BoNeSi'
     git clone https://github.com/Markus-Go/bonesi.git /opt/BoNeSi
