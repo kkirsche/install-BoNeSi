@@ -42,6 +42,22 @@ case ${osinfo} in
     rm -rf !\(50k-bots|browserlist.txt|urllist.txt\)
     cd
   ;;
+  # Ubuntu (tested in 15.04) Dependency Installation
+  Ubuntu)
+    apt-get update
+    echo '[*] Installing Ubuntu Dependencies'
+    apt-get install -y libpcap-dev libnet-dev autoconf gcc make automake git
+    echo
+    echo '[*] Installing BoNeSi'
+    git clone https://github.com/Markus-Go/bonesi.git /opt/BoNeSi
+    cd /opt/BoNeSi
+    autoreconf
+    ./configure
+    make
+    make install
+    rm -rf !\(50k-bots|browserlist.txt|urllist.txt\)
+    cd
+  ;;
   # CentOS 6.5 Dependency Installation
   CentOS)
     # echo '[Warning]: BoNeSi on CentOS Requires EPEL Repository!'
